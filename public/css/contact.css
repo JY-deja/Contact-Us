@@ -1,0 +1,37 @@
+.bn{
+    border-width: 3px;
+}
+.mdl{
+    background-color: transparent;
+}
+.mdlg{
+    background-color: #ffffff;
+}
+/* .modal-title{
+    color: #84A6D3;
+} */
+.text-white{
+    color: black;
+}
+a{
+    text-decoration: none !important;
+}
+/* .card-title{
+    justify-content: center !important;
+} */
+body{
+    background: url(https://img.freepik.com/vecteurs-premium/arriere-plan-simple_626749-1060.jpg?w=740);
+    /* background-color: #eee; */
+}
+.card-img-top{
+    width: 75% !important;
+    margin : 0 auto ;
+    
+}
+.card{
+    padding: 1.5em .5em .5em;
+    border-radius: 1em !important; 
+}
+.card-body{
+    padding: 0.5rem 1rem !important;
+}
