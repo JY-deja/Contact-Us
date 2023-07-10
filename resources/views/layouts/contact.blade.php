@@ -44,10 +44,7 @@
     <!--bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous" defer></script>
-   
-    {{-- In worst case --}}
-    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" defer></script> --}}
-    {{-- <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" type="text/javascript" ></script>  --}}
+  
 </head>
                           {{-- **************************************Body of page************************************** --}}
 <body>
@@ -91,8 +88,6 @@
                         <a class="nav-link link-dark " href="{{ route('contactUs.index') }}">{{ __('All Contacts') }}</a>
                     </li>
                     <li class="nav-item">
-                        {{-- <a class="nav-link " href="{{ route('contacts.index') }}">{{ __('Create New Contact') }}</a> --}}
-                    {{-- </li>  --}}
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="login_name nav-link dropdown-toggle link-dark" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                               <label for="" id="login_name">{{ Auth::user()->name}}</label>                                
@@ -160,21 +155,6 @@
                       <input class="form-control " name ="email" type="type" value="{{ Auth::user()->email  }}" @readonly("email")>
                   </div>
             </div>
-
-            {{-- <div class="form-group">
-              <div class="mb-3">
-                  <label for="formFile" class="form-label text-left fw-bolder">Password</label>
-                  <input class="form-control ctg_img" name ="ctg_img" type="type" id="ctg_img" value="{{ Auth::user()->password }}">
-              </div>
-            </div> --}}
-
-            {{-- <div class="form-group">
-              <div class="mb-3">
-                  <label for="formFile" class="form-label text-left fw-bolder">Confirm Password</label>
-                  <input class="form-control ctg_img" name ="ctg_img" type="type" id="ctg_img">
-              </div>
-            </div> --}}
-
           </div>
 
         <div class="modal-footer">

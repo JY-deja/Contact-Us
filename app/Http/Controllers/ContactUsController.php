@@ -108,8 +108,8 @@ class ContactUsController extends Controller
     {
         $this->validate($request,[
             'catg'=> 'required',
-            'fname'=> 'required',
-            'phone'=> 'required',
+            'fname'=> 'required|string|max:20',
+            'phone'=> 'required|string|max:20',
         ]);
 
         $contact = new Contact();
@@ -156,8 +156,8 @@ class ContactUsController extends Controller
     {
         $this->validate($request,[
             'catg'=> 'required',
-            'fname'=> 'required',
-            'phone'=> 'required',
+            'fname'=> 'required|string|max:20',
+            'phone'=> 'required|string|max:20',
         ]);
         
         $contact = Contact::find($id);
@@ -187,20 +187,8 @@ class ContactUsController extends Controller
         $delet->delete();
         
         return response() -> json(['status'=>'Poof! Your Contact has been deleted!']);
-        //return response('Poof! Your Contact has been deleted!',200);
     }
 
     
-
-
-
-
-    // public function getContactUs(){
-        
-    //     $contacts = Contact::all();
-    //     return DataTables::of($contacts)
-    //                         ->make(true);
-        
-    // }
     
 }

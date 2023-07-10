@@ -158,32 +158,6 @@
 <script type="text/javascript">
     
 $(document).ready(function(){
-  
-  /*fetchContact();
-
-  function fetchContact(){
-    $.ajax({
-      type: "GET",
-      url: "fetchContacts",
-      dataType: "json",
-      success: function (response) {
-        /* console.log(response.contacts);*/
-        /*$.each(response.contacts, function (key, cnt) { 
-          $('tbody').append(
-            '<tr class="tr">\
-                      <input type="hidden" class="cont_id" value="'+cnt.id+'">\
-                      <td class="cont_id">'+cnt.id+'</td>\
-                      <td>'+cnt.Lname+'</td>\
-                      <td>'+cnt.number+'</td>\
-                      <td><button class="edit btn rounded-pill btn-outline-info btn-md text-hover-white" data-bs-toggle= "modal"  data-bs-target="#editmodal" id ="edit" name="edit"><span class="bi bi-pencil-square h4"></span></button></td>\
-                      <td><button class="btn rounded-pill btn-outline-danger btn-md delete" value="'+cnt.id+'"><span class="bi bi-trash h4 "></span></button></td>\
-                    </tr>');
-        });
-      }
-    });
-  }*/
-
-
 /*******************************************************/
 
 //start of code **delete contact** by jquery-confirm
@@ -199,10 +173,6 @@ $('.delete').click(function (e) {
 
     var checkthis = $(this) ;
     var delete_id = $(checkthis).closest("tr").find('.cont_id').val();
-
-    //alert(delete_id);
-
-
     $.confirm({
       title: 'Delete Contact ?',
       content: 'This dialog will automatically trigger \'cancel\' in 6 seconds if you don\'t respond.',
@@ -303,8 +273,6 @@ $(document).on('submit','#addForm', function (e) {
   e.preventDefault();
   let fname = $('#fname').val();
   let phone = $('#phone').val();
-
-  //var Data = $("#addForm").serialize();
   
   $.ajax({
     type: "POST",
@@ -322,8 +290,7 @@ $(document).on('submit','#addForm', function (e) {
       swal(response.status, {
              icon: "success",
       }).then((result) =>{
-        //location.reload();
-        //console.log('good') ;   
+   
         $("tbody").append('<tr><td>'+response.id+'</td><td>'+response.Lname+'</td><td>'+response.number+'</td><td>'+response.Fname+'</td></tr>'); 
        
       })
@@ -383,7 +350,7 @@ $(document).on('submit','#addForm', function (e) {
 
 
 <script>
-   {{--<tbody class="text-dark" >  
+   <tbody class="text-dark" >  
                        @if(count($contacts->toArray()) > 0)
                       @foreach( $contacts as $contact)
                       <tr class="tr" id="tr{{$contact->id}}">
@@ -392,22 +359,4 @@ $(document).on('submit','#addForm', function (e) {
                         <td id="nam{{$contact->id}}" >{{$contact->Lname}}</td>
                         <td id="nmbr{{$contact->id}}">{{$contact->number}}</td>
                         <td>
-                          {{--button for update --}}
-                            {{-- <button class="edit btn rounded-pill btn-outline-info btn-md text-hover-white "
-                            data-bs-toggle="modal"  data-bs-target="#editmodal" id ="edit" name="edit">
-                                <span class="bi bi-pencil-square h4"></span>
-                            </button> --}}
-                        {{-- </td>
-                        <td>
-                          {{--button for delete --}}
-                            {{-- <button class="btn rounded-pill btn-outline-danger btn-md delete" value="{{$contact->id}}">
-                                <span class="bi bi-trash h4 "></span>
-                            </button>
-                        </td>
-                      </tr>
-                      @endforeach
-                  @else
-                      <p>vous n'avez pas ajouter aucun contact.Cliquer <a href = "contacts/create" >ici</a> pour ajouter un contact.</p>
-                  @endif 
-                </tbody>--}}
 </script>

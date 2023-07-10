@@ -51,9 +51,9 @@ class ContactController extends Controller
     {
 
         $request->validate([
-            'nom'=> 'required',
-            'prenom'=> 'required',
-            'numero'=> 'required',
+            'nom' => 'required|string|max:20|alpha',
+            'prenom' => 'required|string|max:20|alpha',
+            'numero' => 'required|numeric|max:20',
         ]);
 
         $contact = new Contact();
@@ -103,8 +103,13 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
+       
+        $request->validate([
+            'up_nom' => 'required|string|max:20|alpha',
+            'up_prenom' => 'required|string|max:20|alpha',
+            'up_numero' => 'required|numeric|max:20',
+        ]);
         $to_up = Contact::find($id);
-
         $to_up->Lname = strip_tags($request->input('up_nom')) ;
         $to_up->Fname = strip_tags($request->input('up_prenom'));
         $to_up->number = strip_tags($request->input('up_numero')); 

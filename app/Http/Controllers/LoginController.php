@@ -77,8 +77,6 @@ class LoginController extends Controller
     {
         $validator = Validator::make($request->all(),[
             'name' =>  ['required','string', 'max:255'],
-            //'email' => ['required','string', 'email', 'max:255', 'unique:users'],
-            //, 'unique:users'
         ]);
 
         if($validator->fails()){
@@ -90,7 +88,6 @@ class LoginController extends Controller
         {
             $query = User::find(Auth::user()->id)->update([
                 'name'=>$request->name,
-                //'email'=>$request->email,
             ]);
 
             if(!$query)
@@ -134,7 +131,7 @@ class LoginController extends Controller
         $pass = strip_tags($request->input('pass'));
         $select = "select pass from login where user = $user ";
         if($select === $pass){
-            //return redirect()->route('contacts.dashboard');
+            // return redirect()->route('contacts.dashboard');
         }
         
         else{

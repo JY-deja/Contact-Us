@@ -1,15 +1,10 @@
 body {
-    /* padding-top: 1rem !important; */
-      /* padding-right: 10rem !important;
-      padding-bottom: 10rem !important;
-      padding-left: 10rem !important; */
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     font-family: "Roboto", sans-serif;
-    /* background-color: #180148; */
     overflow: hidden;
   }
  #cnt-reset{
@@ -63,7 +58,6 @@ body {
       margin: 0 auto;
       width: 10rem;
       color:white;
-      /* background-color: #989ddb; */
       background-color: #b0b4eb;
       opacity: 1;
       -moz-transition: all 0.5s;
@@ -73,9 +67,7 @@ body {
   
   }
   .container .btn {
-  
-      border-radius: 2rem;
-  
+    border-radius: 2rem;
   }
   
   .btn-reset {

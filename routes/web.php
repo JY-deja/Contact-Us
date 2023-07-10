@@ -43,7 +43,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/updateProfile/{id}',[LoginController::class, 'update'])->name('contactUs.updateProfile');
     Route::post('logout', [UserController::class, 'logout'])->name('logout');
 });
-//Route::get('ContactUs/', [ContactUsController::class, 'index']);
 
 Route::get('/log_in', [LoginController::class, 'index'])->name("Login.login");
 Route::get('/send',function(){

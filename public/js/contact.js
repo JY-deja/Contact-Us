@@ -9,7 +9,6 @@ $.ajax({
       $.each(TypeOfTeam.category, function(indexInTeam , valueOfTeam) {
           var url = 'ContactUs/'+ TypeOfTeam.category[indexInTeam].categoryName;
           var src ='/uploads/Categories/'+TypeOfTeam.category[indexInTeam].picture;
-          //url = url.replace('/typeTeam', TypeOfTeam.category[indexInTeam].categoryName);
           $('#carte').prepend('<input type="hidden" id="ctgName" value="'+TypeOfTeam.category[indexInTeam].categoryName+'" class="delete_all"><div class="delete_all col-lg-3 col-sm-10 mx-auto mb-2 delete_'+TypeOfTeam.category[indexInTeam].id+'"><div class="card shadow-lg h-100 border-4 border border-light"><img src='+src+' class="card-img-top h-50 rounded-circle shadow-lg"><div class="card-body "><div id="nam_ctg" class="card-title h-50 pb-3"><h2 class="text-dark text-center fw-bold"><a class="text-dark" data-id = "'+TypeOfTeam.category[indexInTeam].categoryName+'" href= '+url+'>'+TypeOfTeam.category[indexInTeam].categoryName+' Contact</a></h2></div><div class="card-subtitle d-grid gap-2 d-lg-flex"><button class="btn rounded-pill btn-outline-info text-hover-white col-6" id = "update_ctg" data-bs-toggle="modal" data-bs-target="#ctg_Modal_update" data-id="'+TypeOfTeam.category[indexInTeam].id+'" type="button"><span class="bi bi-pencil-square h4"></span></button><button class="btn rounded-pill btn-outline-danger col-6" id = "delete_ctg" data-id="'+TypeOfTeam.category[indexInTeam].id+'" type="button" value="'+TypeOfTeam.category[indexInTeam].id+'"><span class="bi bi-trash h4"></span></button></div></div></div></div></div>');
           
       });   
@@ -31,12 +30,6 @@ $(document).ready(function(){
         //using serialize for sending the data it was inset by user from the form in url,
         data:"data",
         success: function (data) {
-          // for (var x in data.category){ 
-          //   console.log(x);
-           
-          // $('select').prepend(' <option value='+data.category[x].categoryName+'>Contact '+data.category[x].categoryName+'</option>');
-          // }
-          //var typeTeam = $("a").data("id");
             $.each(data.category, function(indexInArray , valueOfElement) {
               $('select').prepend('<option value="'+data.category[indexInArray].categoryName+'">Contact '+data.category[indexInArray].categoryName+'</option>');
             });
@@ -196,12 +189,11 @@ $(document).on('submit', '#addForm' , function (e) {
                swal(response.status, {
                        icon: "success",
                });
-              //  $("tbody").prepend('<tr><td>'+response.msg.id+'</td><td>'+response.msg.Lname+'</td><td>'+response.msg.number+'</td><td>'+response.msg.Category+'</td><td><button class="edit btn rounded-pill btn-outline-info btn-md text-hover-white " data-bs-toggle="modal" data-bs-target="#editmodal" data-id="'+response.msg.id+'" id ="edit" name="edit"><span class="bi bi-pencil-square h4"></span></button></td><td><button class="btn rounded-pill btn-outline-danger btn-md " data-id="'+response.msg.id+'" id = "delete"><span class="bi bi-trash h4"></span></button></td></tr>');
               $('#datatable').DataTable().ajax.reload(null , false);
               $('#datatableTeam').DataTable().ajax.reload(null , false);
             },
            error : function(error){
-             swal("error", {
+             swal("You must insert only numeric values, and be limited to a maximum of 20 characters.", {
                icon: "warning",
              });
            }
@@ -236,7 +228,7 @@ $(document).on('submit','#editForm', function (e) {
                $('#datatableTeam').DataTable().ajax.reload(null , false); 
            },
            error : function(error){
-             swal("Contact not saved !", {
+             swal("Contact not updated !", {
                icon: "warning",
              });
              console.log(error);

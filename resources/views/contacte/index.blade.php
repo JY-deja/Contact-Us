@@ -23,11 +23,6 @@
                 @method('delete')
                 @csrf
             </form>
-            <!--
-            <a href={{route('contacts.destroy', ['id' => $contact->id ] )}}><i class='far fa-trash-alt'></i></a>
-            <br>
-            <br>
-    -->
         @endforeach
         <br>
         <br>

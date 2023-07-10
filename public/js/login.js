@@ -37,7 +37,6 @@ $('#profil_Form').on('submit', function(e){
                         });
                         $("#login_name").remove($("#login_name").text());
                         $("#login_name").remove($("#login_name").text(data.name));
-                        //$(".login_name").append('<label for="" id="login_name">'+data.name+'</label>');
                         $("#input_name").val();
                         $("#input_name").val(data.name);
                         $("#profil_Modal").modal('toggle');

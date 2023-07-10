@@ -2,25 +2,18 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500&display=swap);
 body {
   background: url(https://img.freepik.com/vecteurs-premium/arriere-plan-simple_626749-1060.jpg?w=740); 
-  /* padding-top: 1rem !important; */
-    /* padding-right: 10rem !important;
-    padding-bottom: 10rem !important;
-    padding-left: 10rem !important; */
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   font-family: "Roboto", sans-serif;
-  /* background-color: #180148; */
   overflow: hidden;
 }
 a{
   text-decoration: none;
 }
-/* .navbar-brand h1{
-  padding-right: 3rem !important;
-}*/
+
 .table-cell h2{
   text-align: center !important;
   color:#969ceb;
@@ -175,28 +168,14 @@ form{
   width: 20rem;
   height: 30rem;
   background-color: #fff;
-  /* box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2); */
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* .container .container-form:before {
-  content: "✔";
-  position: absolute;
-  left: 160px;
-  top: -50px;
-  color: #5356ad;
-  font-size: 130px;
-  opacity: 0;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-} */
+
 .container .container-form .btn {
   position: relative;
-  /* box-shadow: 0 0 10px 1px #ff73b3; */
   margin-top: 30px;
 }
 .container .form-item {
@@ -252,15 +231,7 @@ form{
   width: 200px;
   height: 200px;
 }
-/* .container.active .container-form:before {
-  content: "✔";
-  position: absolute;
-  left: 51px;
-  top: 5px;
-  color: #5356ad;
-  font-size: 130px;
-  opacity: 1;
-} */
+
 .container.active input, .container.active .btn, .container.active .info-item {
   display: none;
   opacity: 0;

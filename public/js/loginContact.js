@@ -15,7 +15,6 @@ $(document).ready(function(){
   });
 });
   $(".container-form #btn2").click(function(){
-    // $(".container").addClass("active");
     $(".container .form-item.log-in").hide();
     $(".container .form-item.sign-up").show();
 
